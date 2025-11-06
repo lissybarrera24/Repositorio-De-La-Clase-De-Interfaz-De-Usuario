@@ -1,1 +1,284 @@
+Ejercicio1.html
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog -Consejos de Diseño UX</title>
+    <style>
+        body {
+            font-family: Arial,sans-serif;
+            line-height: 1.5 ;
+        }
+         .hero {
+            background-color: #f0f0f0;
+            padding: 15px;
+            {
+                .hero h1 {
+                    font-size: 28px;
+                    color: #333;
+                }
+                .post-title {
+                    font-size: 20px;
+                    margin-top: 20px;
+                }
+                .post-date {
+                    font-size: 14px;
+                    color: #666
+                    margin-bottom: 10px;
+                }
+                .tips div {
+                    margin-bottom: 5px;
+                }
+                .comment-section input, .comment-section textarea {
+                    width: 100%;
+                    padding: 8px;
+                    box-sizing: border-box;
+                }
+                .comment-section button {
+                    background-color: #007bff;
+                    color:white;
+                    padding: 10px;
+                    border: none;
+                    cursor: pointer;
+                }
+                .footer a {
+                    color: #ffcc00;
+                }
+                <\style>
+                <\head>
+                <body>
+                    <header class="hero">
+                        <h1>Consejos Rapidos para un Mejor Diseño UX </h1>
+                        <\header>
+
+                        <main>
+                            <article>
+                                <h2 class="post-title">Como Mejorar La Usuabilidad</h2>
+                                <p class="post-date">Publicado el 15 de Octubre,2024</p>
+                                </figure>
+                                <img src="https://addaw.org//cdn/admin/assets/images/galeria/SRypBs4xEP7LUMVzbO1o.jpg" alt:"Ejemplo de uso de imagenes en el diseño UX" width="600" heigth="300">
+                                <figcaption>El uso de imagenes en el diseño.</figcaption>
+                                <figure>
+
+                                    <section>
+                                    <p> El diseño de experiencia de usuario (UX) es crucial. Aqui compartimos algunos tips <em> tips<\em> esenciales:<\p>
+                                        <div class="tips">
+                                            <div>Contraste de color </div>
+                                            <div>Navegacion intuitiva <\div>
+                                                <div> Tamaños de fuentes legibles </div>
+                                                <\div>
+                                                </selection>
+                                                </article>
+
+
+                                                <section class="comment-section">
+                                                    <h3>Deje su Comentario<\h3>
+                                                        <form>
+                                                            <div>
+                                                                <label for="nombre">Su nombre:</label>
+                                                                <input tipe="text" id="nombre" name="nombre" required aria-required="true">
+                                                                </div>
+                                                                <div>
+                                                                    <label for="comentario">Comentario:<\label>
+                                                                        <textarea id="comentario" name="comentario" rows="4" required aria-required="true"> <\textarea>
+                                                                            </div>
+                                                                            <div>
+                                                                                <button type="submit">Publicar</button>
+                                                                                </div>
+                                                                            </form>
+                                                                            </section>
+                                                                            </main>
+
+                                                                            <footer class="footer" style="background-color: #333; color:white;padding:15px;
+                                                                            margin-top: 40px;">
+                                                                            <p> 2024 Blog de Diseño UX </p>
+                                                                            <p> <a href="/Contacto">Contactanos</a> </p>
+                                                                            </footer>
+                                                                            </boddy>
+                                                                            </html>
+
+Ejercicio2.html
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title>Ejemplo Roles Aria <\title>
+            <style>
+                .tabs button {margin-right: 5px;
+                    table { border-collapse: collapse; width: 50%;}
+                    th, td {border: 1px solid #333; padding: 5px;}
+                    </style>
+                    </head>
+                    <body>
+                       </h1> Ejemplo de Roles Arias</h1>
+
+                       <!--role= tablits" -->
+                       <div role="tablits" aria-label="Secciones de Contenido" class="tabs">
+                        <button role="tab" aria-selected="true" id="tab1" aria-controls="panel1" Tab1</button>
+                            <button role="tab" aria selected="false" id="tab2" aria-controls="panel2"> Tab2</button>
+                            </div>
+
+                            <div id="panel1" role="tabpanel" aria-labelledby="tab1">
+                                <p>Contenido del Tab 1</p>
+                                </div>
+                                <div id="panel2" role="tabpanel" aria-level="tab2" hidden>
+                                    <p>Contenido del Tab 2</p>
+                                    </div>
+
+                                    <!--role="table"-->
+                                    <table role="table" aria-label="tabla de Ejemplo"
+                                    </thead>
+                                    <tr>
+
+                                        <th role="columnheader"> Nombre</th>
+                                        <th role="columnheader"> Edad</th>
+                                        </tr>
+                                        </thead>
+                                        </tbody>
+                                        <tr>
+                                            <td role="cell">Ana</td>
+                                            <td role="cell">28</td>
+                            
+                                            </tr>
+                                        <tr>
+                                            <td role="cell">Luis</td>
+                                            <td role="cell">34</td>
+                                            </tr>
+                                            </tbody>
+                                            </table>
+                                            <--role="img" -->
+                                            <div role="img" area-label="Logo de la empresa">
+                                                <img src="https://via.placeholder.com/150" alt=""
+                                            </div>
+                                            </body>
+                                            </html>
+Ejercicio3.html
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title> Ejemplo Propiedades Aria</title>
+        </head>
+        <body>
+            <h1>Ejemplo De Propiedades Aria</h1>
+
+            <-- aria-readonly -->
+            <label for="readonly-input">Campo solo lectura:</label>
+            <input type="text" id="readonly-input" value="No editable" aria-readonly="true">
+            <br> <br>
+
+            <!-- aria-required -->
+             <label for="required-input">Capmpo requerido</label>
+             <input type="text" id="required-input" aria-required="true">
+             <br> <br>
+
+             <-- aria-checked -->
+             <label>
+                <input type="checkbox" aria-checked="false" id="checkbox1">
+                Acepto Terminos y Condiciones
+             </label>
+        </body>
+</html>
+
+
+
+                
+
+                                                                            
+                                                                
+                                                                        
+
+                            
+            
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
