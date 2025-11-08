@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <title> Ejemplo Propiedades Aria</title>
+        </head>
+        <body>
+            <h1>Ejemplo De Propiedades Aria</h1>
+
+            <-- aria-readonly -->
+            <label for="readonly-input">Campo solo lectura:</label>
+            <input type="text" id="readonly-input" value="No editable" aria-readonly="true">
+            <br> <br>
+
+            <!-- aria-required -->
+             <label for="required-input">Capmpo requerido</label>
+             <input type="text" id="required-input" aria-required="true">
+             <br> <br>
+
+             <-- aria-checked -->
+             <label>
+                <input type="checkbox" aria-checked="false" id="checkbox1">
+                Acepto Terminos y Condiciones
+             </label>
+        </body>
+</html>
