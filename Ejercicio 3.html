@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño 3 - Flexbox y BEM</title>
+  <style>
+    /* Bloque principal */
+    .contenedor {
+      background-color: #ffffff; /* Fondo blanco */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 15px; /* separación entre filas */
+    }
+
+    /* Fila contenedora */
+    .contenedor__fila {
+      display: flex;
+      justify-content: center;
+      gap: 15px; /* separación entre cuadros */
+    }
+
+    /* Elementos (los cuadros) */
+    .contenedor__item {
+      background-color: #d3d3d3; /* gris claro */
+      width: 110px;  /* ancho rectangular */
+      height: 70px;  /* altura */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 6px;
+      box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <!-- Fila superior -->
+    <div class="contenedor__fila">
+      <div class="contenedor__item">Ítem 4</div>
+      <div class="contenedor__item">Ítem 5</div>
+    </div>
+    <!-- Fila inferior -->
+    <div class="contenedor__fila">
+      <div class="contenedor__item">Ítem 1</div>
+      <div class="contenedor__item">Ítem 2</div>
+      <div class="contenedor__item">Ítem 3</div>
+    </div>
+  </div>
+</body>
+</html>

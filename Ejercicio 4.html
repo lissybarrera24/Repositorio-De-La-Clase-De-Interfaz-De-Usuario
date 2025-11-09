@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño 4 - Flexbox y BEM</title>
+  <style>
+    .contenedor {
+      background-color: #ffffff; /* Fondo blanco */
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0; /* filas pegadas */
+    }
+
+    .contenedor__fila {
+      display: flex;
+      justify-content: center;
+      gap: 0; /* cuadros pegados */
+    }
+
+    .contenedor__item {
+      width: 140px;  /* más grande */
+      height: 140px; /* más grande */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 10px;
+      color: #000000; /* texto negro */
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+    }
+
+    /* Colores claros de los cuadros */
+    .contenedor__item--1 { background-color: #ffd580; } /* naranja claro */
+    .contenedor__item--2 { background-color: #ffb3b3; } /* rojo claro */
+    .contenedor__item--3 { background-color: #add8ff; } /* azul claro */
+    .contenedor__item--4 { background-color: #b3e0ff; } /* azul muy claro */
+    .contenedor__item--5 { background-color: #e6b3ff; } /* morado claro */
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <!-- Fila superior: 1, 2, 3 -->
+    <div class="contenedor__fila">
+      <div class="contenedor__item contenedor__item--1">Ítem 1</div>
+      <div class="contenedor__item contenedor__item--2">Ítem 2</div>
+      <div class="contenedor__item contenedor__item--3">Ítem 3</div>
+    </div>
+    <!-- Fila inferior: 4, 5 -->
+    <div class="contenedor__fila">
+      <div class="contenedor__item contenedor__item--4">Ítem 4</div>
+      <div class="contenedor__item contenedor__item--5">Ítem 5</div>
+    </div>
+  </div>
+</body>
+</html>

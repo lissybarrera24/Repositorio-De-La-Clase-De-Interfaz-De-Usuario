@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diseño 5 - Productos Supermercado</title>
+  <style>
+    body {
+      background-color: #ffffff; /* Fondo blanco */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px; /* separación entre filas */
+    }
+
+    .contenedor__fila {
+      display: flex;
+      justify-content: center;
+      gap: 15px; /* separación entre productos */
+      flex-wrap: wrap;
+    }
+
+    .producto {
+      width: 150px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+      background-color: #fafafa;
+    }
+
+    .producto__imagen {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .producto__nombre {
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .producto__precio {
+      font-weight: bold;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="contenedor">
+    <!-- Fila superior: 5 productos -->
+    <div class="contenedor__fila">
+      <div class="producto">
+        <img src="https://tiendaenlinea.supermercadoelexito.hn/web/image/product.product/13061/image_1024/%5B7401004201821%5D%20MAYONESA%20REGIA%20GALON%203500GR%20BO?unique=93261c0" alt="Mayonesa Regia Omega 3" class="producto__imagen">
+        <div class="producto__nombre">Mayonesa Regia Omega 3 350g</div>
+        <div class="producto__precio">L 299.99</div>
+      </div>
+      <div class="producto">
+        <img src="https://tiendaenlinea.supermercadoelexito.hn/web/image/product.template/14534/image_1024?unique=51e7482" alt="Regia Mostaza 200g" class="producto__imagen">
+        <div class="producto__nombre">Regia Mostaza 200g</div>
+        <div class="producto__precio">L 21.99</div>
+      </div>
+      <div class="producto">
+        <img src="https://tiendaenlinea.supermercadoelexito.hn/web/image/product.template/14533/image_1024?unique=51e7482" alt="Regia Mostaza 400g" class="producto__imagen">
+        <div class="producto__nombre">Regia Mostaza 400g</div>
+        <div class="producto__precio">L 32.69</div>
+      </div>
+      <div class="producto">
+        <img src="https://rolandfoods.com/product_images/76228-dijon-mustard-main-600.png" alt="Roland Dijon Mustard 70oz" class="producto__imagen">
+        <div class="producto__nombre">Roland Dijon Mustard 70oz</div>
+        <div class="producto__precio">L 121.99</div>
+      </div>
+      <div class="producto">
+        <img src="https://www.kroger.com/product/images/xlarge/front/0004132100648" alt="Wish Bone Italian 15oz" class="producto__imagen">
+        <div class="producto__nombre">Wish Bone Italian 15oz</div>
+        <div class="producto__precio">L 99.99</div>
+      </div>
+    </div>
+
+    <!-- Fila inferior: 3 productos -->
+    <div class="contenedor__fila">
+      <div class="producto">
+        <img src="https://tiendaenlinea.supermercadoelexito.hn/web/image/product.template/28101/image_1024?unique=e0ecbb5" alt="Wish Bone Italian 237ml" class="producto__imagen">
+        <div class="producto__nombre">Wish Bone Italian 237ml</div>
+        <div class="producto__precio">L 81.99</div>
+      </div>
+      <div class="producto">
+        <img src="https://www.americangrocer.co.uk/cdn/shop/products/WishBoneRanchDressing_800x.png?v=1598351417" alt="Wish Bone Ranch 444ml" class="producto__imagen">
+        <div class="producto__nombre">Wish Bone Ranch 444ml</div>
+        <div class="producto__precio">L 99.99</div>
+      </div>
+      <div class="producto">
+        <img src="https://m.media-amazon.com/images/I/61Vn+rTvsjL._AC_UF894,1000_QL80_.jpg" alt="Wish Bone Ranch 237ml" class="producto__imagen">
+        <div class="producto__nombre">Wish Bone Ranch 237ml</div>
+        <div class="producto__precio">L 81.99</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
