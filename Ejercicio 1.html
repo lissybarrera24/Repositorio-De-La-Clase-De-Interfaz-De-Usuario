@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Colores customRed</title>
+</head>
+<body class="p-6 bg-gray-100">
+
+  <h1 class="text-2xl font-bold mb-6">Tonalidades de customRed según breakpoints</h1>
+
+  <div class="grid grid-cols-1 gap-4">
+
+    <!-- Div dinámico que cambia de color según tamaño de pantalla -->
+    <div class="h-24 flex items-center justify-center text-white font-bold"
+         style="background-color:#FFB3B3;" 
+         id="dynamicDiv">
+      Color dinámico (según breakpoint)
+    </div>
+
+    <!-- Divs fijos mostrando cada tonalidad -->
+    <div class="h-24 flex items-center justify-center text-white font-bold" style="background-color:#FFB3B3">
+      customRed-150
+    </div>
+    <div class="h-24 flex items-center justify-center text-white font-bold" style="background-color:#FF6666">
+      customRed-340
+    </div>
+    <div class="h-24 flex items-center justify-center text-white font-bold" style="background-color:#FF1A1A">
+      customRed-530
+    </div>
+    <div class="h-24 flex items-center justify-center text-white font-bold" style="background-color:#CC0000">
+      customRed-720
+    </div>
+    <div class="h-24 flex items-center justify-center text-white font-bold" style="background-color:#990000">
+      customRed-910
+    </div>
+
+  </div>
+
+  <script>
+    // Script para cambiar color del div dinámico según ancho de pantalla (simula breakpoints)
+    const dynamicDiv = document.getElementById('dynamicDiv');
+
+    function updateColor() {
+      const width = window.innerWidth;
+      if(width < 640) { // xs
+        dynamicDiv.style.backgroundColor = '#FFB3B3';
+      } else if(width >= 640 && width < 768) { // sm
+        dynamicDiv.style.backgroundColor = '#FF6666';
+      } else if(width >= 768 && width < 1024) { // md
+        dynamicDiv.style.backgroundColor = '#FF1A1A';
+      } else if(width >= 1024 && width < 1280) { // lg
+        dynamicDiv.style.backgroundColor = '#CC0000';
+      } else { // xl
+        dynamicDiv.style.backgroundColor = '#990000';
+      }
+    }
+
+    window.addEventListener('resize', updateColor);
+    window.addEventListener('load', updateColor);
+  </script>
+
+</body>
+</html>
