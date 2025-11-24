@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lissy Darithza - Portafolio Profesional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    .portafolio__header { background-color: #1E40AF; }
+    .portafolio__nav-item:hover { color: #60A5FA; }
+    .portafolio__section { padding-top: 5rem; padding-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease-in-out; }
+    .portafolio__section.visible { opacity: 1; transform: translateY(0); }
+    .portafolio__card { transition: transform 0.3s, box-shadow 0.3s; }
+    .portafolio__card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
+    .gradient-text { background: linear-gradient(90deg, #3B82F6, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .skill-bar { background-color: #E5E7EB; border-radius: 9999px; overflow: hidden; height: 1rem; }
+    .skill-fill { height: 100%; width: 0%; transition: width 1.5s ease-in-out; background: linear-gradient(to right, #6366F1, #EC4899); }
+    .social-floating { position: fixed; top: 50%; left: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.5rem; z-index: 50; }
+    .social-floating a { background-color: #1E40AF; color: white; padding: 0.6rem; border-radius: 0 8px 8px 0; transition: all 0.3s; }
+    .social-floating a:hover { background-color: #9333EA; transform: translateX(5px); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Redes flotantes -->
+  <div class="social-floating">
+    <a href="https://github.com/LissyBarrera24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://t.me/LissyBarrera" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+  </div>
+
+  <!-- Header -->
+  <header class="portafolio__header text-white fixed w-full z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">Lissy Darithza</h1>
+      <nav aria-label="Menú principal">
+        <ul class="flex space-x-6">
+          <li><a href="#inicio" class="portafolio__nav-item font-semibold">Inicio</a></li>
+          <li><a href="#biografia" class="portafolio__nav-item font-semibold">Biografía</a></li>
+          <li><a href="#experiencia" class="portafolio__nav-item font-semibold">Experiencia</a></li>
+          <li><a href="#proyectos" class="portafolio__nav-item font-semibold">Proyectos</a></li>
+          <li><a href="#habilidades" class="portafolio__nav-item font-semibold">Habilidades</a></li>
+          <li><a href="#cursos" class="portafolio__nav-item font-semibold">Cursos</a></li>
+          <li><a href="#contacto" class="portafolio__nav-item font-semibold">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Inicio -->
+  <section id="inicio" class="portafolio__section bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-center text-white pt-32">
+    <h2 class="text-5xl font-bold mb-4 gradient-text">¡Hola! Soy Lissy Darithza</h2>
+    <p class="text-xl mb-6">Estudiante de programación y profesional en consejería escolar</p>
+    <div class="flex justify-center gap-4 mt-6">
+      <a href="#contacto" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
+      <a href="#habilidades" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
+    </div>
+  </section>
+
+  <!-- Biografía -->
+  <section id="biografia" class="portafolio__section container mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-6 text-center gradient-text">Biografía</h2>
+    <p class="text-lg text-justify">Desde mi punto de vista, la combinación de habilidades técnicas y humanas es fundamental para el desarrollo profesional. Actualmente estudio programación mientras trabajo como consejera escolar, aplicando conocimientos en tecnología y comunicación efectiva. Me apasiona crear soluciones digitales con diseño atractivo y funcionalidad intuitiva.</p>
+  </section>
+
+  <!-- Experiencia laboral -->
+  <section id="experiencia" class="portafolio__section bg-gradient-to-r from-purple-100 to-pink-100 py-16 px-4">
+    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Experiencia Laboral</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
+        <h3 class="font-bold text-xl mb-2 text-purple-700">Consejera Escolar</h3>
+        <span class="text-gray-500">2025 - Actualidad</span>
+        <p class="mt-2 text-gray-700">Orientación académica, apoyo en proyectos educativos y gestión de comunicación entre estudiantes, docentes y familias.</p>
+      </div>
+      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
+        <h3 class="font-bold text-xl mb-2 text-purple-700">Asistente de Secretaría</h3>
+        <span class="text-gray-500">2023 - 2024</span>
+        <p class="mt-2 text-gray-700">Gestión administrativa, coordinación de agendas, manejo de documentos y atención directa a clientes y personal.</p>
+      </div>
+      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
+        <h3 class="font-bold text-xl mb-2 text-purple-700">Proyecto Académico de Programación</h3>
+        <span class="text-gray-500">2024 - 2025</span>
+        <p class="mt-2 text-gray-700">Desarrollo de aplicaciones web con HTML, CSS, JavaScript y Tailwind CSS aplicando buenas prácticas de interfaz de usuario y accesibilidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Habilidades técnicas -->
+  <section id="habilidades" class="portafolio__section container mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Habilidades Técnicas</h2>
+    <div class="space-y-6 max-w-xl mx-auto">
+      <div>
+        <p class="font-semibold mb-1">HTML / CSS / Tailwind</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">JavaScript</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">Java</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">Git / GitHub</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">Figma / UI Design</p>
+        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cursos y Certificaciones -->
+  <section id="cursos" class="portafolio__section container mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Cursos y Certificaciones</h2>
+    <div class="grid md-grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Curso de Computación -->
+      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://image.shutterstock.com/image-photo/teacher-giving-computer-science-lecture-600nw-2326351789.jpg" alt="Curso de Computación" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Computación</h3>
+        <span class="text-gray-500">2023</span>
+      </div>
+
+      <!-- Curso de Finanzas -->
+      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://www.educaciontrespuntocero.com/cursos/wp-content/uploads/2023/04/cursos-de-finanzas-destacada-min.jpg" alt="Curso Cómo Ordenar Mis Finanzas" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Cómo Ordenar Mis Finanzas</h3>
+        <span class="text-gray-500">2018</span>
+      </div>
+
+      <!-- Curso de Programación (con enlace) -->
+      <a href="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" target="_blank" class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" alt="Curso de Programación" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Programación</h3>
+        <span class="text-gray-500">2025</span>
+      </a>
+
+      <!-- Curso de Sinergia -->
+      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://via.placeholder.com/100x100.png?text=Sinergia" alt="Curso de Sinergia" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Sinergia</h3>
+        <span class="text-gray-500">2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="portafolio__section bg-gradient-to-r from-purple-50 to-pink-50 py-16 px-4">
+    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Contacto</h2>
+    <form class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
+      <label for="nombre" class="block font-semibold">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
+      <label for="correo" class="block font-semibold">Correo:</label>
+      <input type="email" id="correo" name="correo" value="Lissybuezo1996@gmail.com" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
+      <label for="mensaje" class="block font-semibold">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required></textarea>
+      <button type="submit" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    Developed by @LissyBarrera24 | Correo: Lissybuezo1996@gmail.com
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    const sections = document.querySelectorAll('.portafolio__section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.skill-fill').forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+      });
+    });
+  </script>
+
+</body>
+</html>
