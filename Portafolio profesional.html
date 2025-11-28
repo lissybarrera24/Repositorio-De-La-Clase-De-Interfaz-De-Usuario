@@ -1,192 +1,214 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lissy Darithza - Portafolio Profesional</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    .portafolio__header { background-color: #1E40AF; }
-    .portafolio__nav-item:hover { color: #60A5FA; }
-    .portafolio__section { padding-top: 5rem; padding-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease-in-out; }
-    .portafolio__section.visible { opacity: 1; transform: translateY(0); }
-    .portafolio__card { transition: transform 0.3s, box-shadow 0.3s; }
-    .portafolio__card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
-    .gradient-text { background: linear-gradient(90deg, #3B82F6, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .skill-bar { background-color: #E5E7EB; border-radius: 9999px; overflow: hidden; height: 1rem; }
-    .skill-fill { height: 100%; width: 0%; transition: width 1.5s ease-in-out; background: linear-gradient(to right, #6366F1, #EC4899); }
-    .social-floating { position: fixed; top: 50%; left: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.5rem; z-index: 50; }
-    .social-floating a { background-color: #1E40AF; color: white; padding: 0.6rem; border-radius: 0 8px 8px 0; transition: all 0.3s; }
-    .social-floating a:hover { background-color: #9333EA; transform: translateX(5px); }
+    body { font-family: 'Inter', sans-serif; }
+    .section-title { font-size: 1.875rem; font-weight: 700; margin-bottom: 1rem; color: #1D4ED8; }
+    .hover-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 12px 20px rgba(0,0,0,0.15); }
+    .hover-btn:hover { transform: scale(1.05); }
+    .transition-all { transition: all 0.3s ease-in-out; }
+
+    /* Animaciones */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
   </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-  <!-- Redes flotantes -->
-  <div class="social-floating">
-    <a href="https://github.com/LissyBarrera24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://t.me/LissyBarrera" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
+<body class="bg-gradient-to-b from-pink-100 via-yellow-50 to-green-50 text-gray-800">
 
   <!-- Header -->
-  <header class="portafolio__header text-white fixed w-full z-50 shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Lissy Darithza</h1>
-      <nav aria-label="Menú principal">
-        <ul class="flex space-x-6">
-          <li><a href="#inicio" class="portafolio__nav-item font-semibold">Inicio</a></li>
-          <li><a href="#biografia" class="portafolio__nav-item font-semibold">Biografía</a></li>
-          <li><a href="#experiencia" class="portafolio__nav-item font-semibold">Experiencia</a></li>
-          <li><a href="#proyectos" class="portafolio__nav-item font-semibold">Proyectos</a></li>
-          <li><a href="#habilidades" class="portafolio__nav-item font-semibold">Habilidades</a></li>
-          <li><a href="#cursos" class="portafolio__nav-item font-semibold">Cursos</a></li>
-          <li><a href="#contacto" class="portafolio__nav-item font-semibold">Contacto</a></li>
+  <header class="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 shadow-md fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-xl font-bold text-white">Lissy Darithza</h1>
+      <nav>
+        <ul class="flex gap-4 md:gap-6 text-white font-medium">
+          <li><button class="menu-btn transition-all" data-target="biografia">Biografía</button></li>
+          <li><button class="menu-btn transition-all" data-target="experiencia">Experiencia</button></li>
+          <li><button class="menu-btn transition-all" data-target="habilidades">Habilidades Técnicas</button></li>
+          <li><button class="menu-btn transition-all" data-target="habilidades-blandas">Habilidades Blandas</button></li>
+          <li><button class="menu-btn transition-all" data-target="proyectos">Proyectos</button></li>
+          <li><button class="menu-btn transition-all" data-target="contacto">Contacto</button></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Inicio -->
-  <section id="inicio" class="portafolio__section bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-center text-white pt-32">
-    <h2 class="text-5xl font-bold mb-4 gradient-text">¡Hola! Soy Lissy Darithza</h2>
-    <p class="text-xl mb-6">Estudiante de programación y profesional en consejería escolar</p>
-    <div class="flex justify-center gap-4 mt-6">
-      <a href="#contacto" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
-      <a href="#habilidades" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
-    </div>
-  </section>
-
   <!-- Biografía -->
-  <section id="biografia" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-6 text-center gradient-text">Biografía</h2>
-    <p class="text-lg text-justify">Desde mi punto de vista, la combinación de habilidades técnicas y humanas es fundamental para el desarrollo profesional. Actualmente estudio programación mientras trabajo como consejera escolar, aplicando conocimientos en tecnología y comunicación efectiva. Me apasiona crear soluciones digitales con diseño atractivo y funcionalidad intuitiva.</p>
+  <section id="biografia" class="pt-32 pb-16 bg-gradient-to-r from-pink-100 via-yellow-100 to-green-100 fade-in active">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-pink-700 mb-4">¡Hola! Soy Lissy Darithza</h2>
+      <p class="text-lg text-gray-800 max-w-3xl mx-auto">
+        Desde muy joven me ha apasionado aprender y crecer en todo lo que hago. Actualmente, soy estudiante de programación y trabajo como Consejera Escolar, combinando mi interés por la tecnología con mi vocación de ayudar a otros. Me considero una persona organizada, responsable y comprometida con mis metas, siempre buscando mejorar mis habilidades y adquirir nuevos conocimientos.
+      </p>
+      <p class="text-lg text-gray-800 max-w-3xl mx-auto mt-4">
+        Además, tengo experiencia como Asistente de Consejería y Tutora Personal, lo que me ha enseñado la importancia de la paciencia, la comunicación efectiva y el trabajo en equipo. Me entusiasma el desarrollo de interfaces modernas y funcionales, así como participar en proyectos que aporten valor a la comunidad.
+      </p>
+      <p class="text-lg text-gray-800 max-w-3xl mx-auto mt-4">
+        Mi objetivo es seguir creciendo profesionalmente en el área de la programación y el diseño de interfaces, aplicando creatividad, innovación y dedicación en cada proyecto que realizo.
+      </p>
+    </div>
   </section>
 
-  <!-- Experiencia laboral -->
-  <section id="experiencia" class="portafolio__section bg-gradient-to-r from-purple-100 to-pink-100 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Experiencia Laboral</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Consejera Escolar</h3>
-        <span class="text-gray-500">2025 - Actualidad</span>
-        <p class="mt-2 text-gray-700">Orientación académica, apoyo en proyectos educativos y gestión de comunicación entre estudiantes, docentes y familias.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Asistente de Secretaría</h3>
-        <span class="text-gray-500">2023 - 2024</span>
-        <p class="mt-2 text-gray-700">Gestión administrativa, coordinación de agendas, manejo de documentos y atención directa a clientes y personal.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Proyecto Académico de Programación</h3>
-        <span class="text-gray-500">2024 - 2025</span>
-        <p class="mt-2 text-gray-700">Desarrollo de aplicaciones web con HTML, CSS, JavaScript y Tailwind CSS aplicando buenas prácticas de interfaz de usuario y accesibilidad.</p>
+  <!-- Experiencia Laboral -->
+  <section id="experiencia" class="py-16 bg-gradient-to-r from-purple-100 via-pink-50 to-yellow-100 fade-in hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-center">Experiencia Laboral</h2>
+      <div class="grid md:grid-cols-3 gap-8 mt-8">
+        <div class="bg-pink-50 p-6 rounded-lg shadow-md hover-card transition duration-300">
+          <h3 class="font-semibold text-pink-600 mb-2">Consejera</h3>
+          <p class="text-gray-800 mb-1">Instituto Polivalente Lejamani</p>
+          <p class="text-gray-600 text-sm">2025 - Actualidad</p>
+          <ul class="mt-2 list-disc list-inside text-gray-600">
+            <li>Asesoría a estudiantes en desarrollo académico y emocional.</li>
+            <li>Gestión de programas educativos y seguimiento personalizado.</li>
+          </ul>
+        </div>
+        <div class="bg-purple-50 p-6 rounded-lg shadow-md hover-card transition duration-300">
+          <h3 class="font-semibold text-purple-600 mb-2">Asistente de Consejería</h3>
+          <p class="text-gray-800 mb-1">Instituto Polivalente Lejamani</p>
+          <p class="text-gray-600 text-sm">2023 - 2024</p>
+          <ul class="mt-2 list-disc list-inside text-gray-600">
+            <li>Apoyo administrativo y acompañamiento a estudiantes.</li>
+            <li>Organización de documentos y agendas escolares.</li>
+          </ul>
+        </div>
+        <div class="bg-yellow-50 p-6 rounded-lg shadow-md hover-card transition duration-300">
+          <h3 class="font-semibold text-yellow-600 mb-2">Tutora Personal</h3>
+          <p class="text-gray-800 mb-1">Escuela José Cecilio Del Valle</p>
+          <p class="text-gray-600 text-sm">2022 - 2023</p>
+          <ul class="mt-2 list-disc list-inside text-gray-600">
+            <li>Apoyo académico individual y grupal a niños.</li>
+            <li>Planificación de sesiones educativas personalizadas.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Habilidades técnicas -->
-  <section id="habilidades" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Habilidades Técnicas</h2>
-    <div class="space-y-6 max-w-xl mx-auto">
-      <div>
-        <p class="font-semibold mb-1">HTML / CSS / Tailwind</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">JavaScript</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Java</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Git / GitHub</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Figma / UI Design</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
+  <!-- Habilidades Técnicas -->
+  <section id="habilidades" class="py-16 bg-gradient-to-r from-pink-50 via-yellow-50 to-green-50 fade-in hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-center text-purple-700">Habilidades Técnicas</h2>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <span class="flex items-center gap-2 bg-pink-300 text-white font-semibold px-4 py-2 rounded shadow-lg"><i class="fab fa-html5"></i> HTML</span>
+        <span class="flex items-center gap-2 bg-yellow-400 text-white font-semibold px-4 py-2 rounded shadow-lg"><i class="fab fa-css3-alt"></i> CSS / Tailwind</span>
+        <span class="flex items-center gap-2 bg-green-400 text-white font-semibold px-4 py-2 rounded shadow-lg"><i class="fab fa-js-square"></i> JavaScript</span>
+        <span class="flex items-center gap-2 bg-purple-400 text-white font-semibold px-4 py-2 rounded shadow-lg"><i class="fab fa-java"></i> Java</span>
+        <span class="flex items-center gap-2 bg-pink-500 text-white font-semibold px-4 py-2 rounded shadow-lg"><i class="fab fa-react"></i> React</span>
+        <span class="flex items-center gap-2 bg-green-500 text-white font-semibold px-4 py-2 rounded shadow-lg"><i class="fas fa-mobile-alt"></i> .NET MAUI</span>
       </div>
     </div>
   </section>
 
-  <!-- Cursos y Certificaciones -->
-  <section id="cursos" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Cursos y Certificaciones</h2>
-    <div class="grid md-grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Curso de Computación -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://image.shutterstock.com/image-photo/teacher-giving-computer-science-lecture-600nw-2326351789.jpg" alt="Curso de Computación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Computación</h3>
-        <span class="text-gray-500">2023</span>
-      </div>
-
-      <!-- Curso de Finanzas -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.educaciontrespuntocero.com/cursos/wp-content/uploads/2023/04/cursos-de-finanzas-destacada-min.jpg" alt="Curso Cómo Ordenar Mis Finanzas" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Cómo Ordenar Mis Finanzas</h3>
-        <span class="text-gray-500">2018</span>
-      </div>
-
-      <!-- Curso de Programación (con enlace) -->
-      <a href="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" target="_blank" class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" alt="Curso de Programación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Programación</h3>
-        <span class="text-gray-500">2025</span>
-      </a>
-
-      <!-- Curso de Sinergia -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://via.placeholder.com/100x100.png?text=Sinergia" alt="Curso de Sinergia" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Sinergia</h3>
-        <span class="text-gray-500">2025</span>
+  <!-- Habilidades Blandas -->
+  <section id="habilidades-blandas" class="py-16 bg-gradient-to-r from-purple-50 via-pink-50 to-yellow-50 fade-in hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-center text-green-700">Habilidades Blandas</h2>
+      <div class="flex flex-wrap justify-center gap-4 mt-8">
+        <span class="flex items-center gap-2 bg-pink-300 text-white font-semibold px-4 py-2 rounded shadow-lg">Comunicación</span>
+        <span class="flex items-center gap-2 bg-yellow-400 text-white font-semibold px-4 py-2 rounded shadow-lg">Liderazgo</span>
+        <span class="flex items-center gap-2 bg-green-400 text-white font-semibold px-4 py-2 rounded shadow-lg">Trabajo en equipo</span>
+        <span class="flex items-center gap-2 bg-purple-400 text-white font-semibold px-4 py-2 rounded shadow-lg">Organizada</span>
+        <span class="flex items-center gap-2 bg-pink-500 text-white font-semibold px-4 py-2 rounded shadow-lg">Responsable</span>
+        <span class="flex items-center gap-2 bg-green-500 text-white font-semibold px-4 py-2 rounded shadow-lg">Puntual</span>
       </div>
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contacto" class="portafolio__section bg-gradient-to-r from-purple-50 to-pink-50 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Contacto</h2>
-    <form class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
-      <label for="nombre" class="block font-semibold">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="correo" class="block font-semibold">Correo:</label>
-      <input type="email" id="correo" name="correo" value="Lissybuezo1996@gmail.com" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="mensaje" class="block font-semibold">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required></textarea>
-      <button type="submit" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Enviar Mensaje</button>
-    </form>
+  <!-- Proyectos -->
+  <section id="proyectos" class="py-16 bg-gradient-to-r from-green-100 via-yellow-50 to-pink-100 fade-in hidden">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="section-title text-center text-purple-700">Proyectos Destacados</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <!-- Proyecto 1 -->
+        <div class="bg-pink-100 p-4 rounded-lg shadow-md hover-card transition duration-300">
+          <img src="https://www.deportestvc.com/wp-content/uploads/2025/04/principal_olimpia-vs-motagua-precios-de-boletos-para-el-superclasico-de-este-domingo-y-hora-para-ver.jpg" alt="Proyecto 1" class="w-full h-40 object-cover rounded mb-4">
+          <h3 class="font-semibold text-pink-700 mb-2">Proyecto Venta de Boletos</h3>
+          <p class="text-gray-800 text-sm">
+            Elaboré un proyecto de venta de boletos para partidos del Olimpia y Motagua. El proyecto incluía opciones para que los clientes pudieran elegir en qué parte ver el partido: palco, sombra o VIP.
+          </p>
+        </div>
+        <!-- Proyecto 2 -->
+        <div class="bg-yellow-100 p-4 rounded-lg shadow-md hover-card transition duration-300">
+          <img src="https://images.genially.com/genially/templates/4e27a8c2-102e-4665-8cb9-ace91f22b505.jpeg" alt="Proyecto 2" class="w-full h-40 object-cover rounded mb-4">
+          <h3 class="font-semibold text-yellow-700 mb-2">Recetario Interactivo</h3>
+          <p class="text-gray-800 text-sm">
+            Elaboré un recetario con diferentes tipos de comidas al gusto del cliente, que se podían agregar al carrito. Además, se implementó que al navegar por el recetario se desplegaran más opciones para que los clientes pudieran ver más detalles de cada receta.
+          </p>
+        </div>
+        <!-- Proyecto 3 -->
+        <div class="bg-green-100 p-4 rounded-lg shadow-md hover-card transition duration-300">
+          <img src="https://lacolonia.vtexassets.com/arquivos/ids/250794/734474504022_1.jpg.jpg?v=638786948991830000" alt="Proyecto 3" class="w-full h-40 object-cover rounded mb-4">
+          <h3 class="font-semibold text-green-700 mb-2">Logo y Página Web de Vivero</h3>
+          <p class="text-gray-800 text-sm">
+            Trabajé en un proyecto para un vivero de flores, diseñando el logo y creando una página web para que los clientes pudieran conocer todos los tipos de flores disponibles y obtener información sobre los productos.
+          </p>
+        </div>
+        <!-- Proyecto 4 -->
+        <div class="bg-purple-100 p-4 rounded-lg shadow-md hover-card transition duration-300">
+          <img src="C:\Users\Donaire\Downloads\WhatsApp Image 2025-11-28 at 12.42.43 PM.jpeg" alt="Proyecto 4" class="w-40 h-40 object-cover rounded mb-4 mx-auto">
+          <h3 class="font-semibold text-purple-700 mb-2">Pastelería para Personas con Diabetes</h3>
+          <p class="text-gray-800 text-sm">
+            Elaboré una página web, un video y un catálogo digital sobre pasteles y postres diseñados para personas con diabetes, mostrando los productos de forma atractiva y accesible para los clientes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto y Redes -->
+  <section id="contacto" class="py-16 bg-gradient-to-r from-yellow-50 via-green-50 to-pink-50 fade-in hidden">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <h2 class="section-title text-green-700">Contacto & Redes Sociales</h2>
+      <p class="text-gray-800 mb-6">Puedes contactarme o seguirme en mis redes sociales:</p>
+      <div class="flex justify-center gap-6 flex-wrap">
+        <a href="mailto:Lissybuezo1996@gmail.com" class="text-pink-700 hover:text-pink-900 transition font-medium flex items-center gap-1"><i class="fas fa-envelope"></i> Lissybuezo1996@gmail.com</a>
+        <a href="https://github.com/lissybarrera24" class="text-gray-800 hover:text-gray-900 transition font-medium flex items-center gap-1"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/lissydarithza/" class="text-blue-700 hover:text-blue-900 transition font-medium flex items-center gap-1"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://twitter.com/LissyB" class="text-blue-500 hover:text-blue-700 transition font-medium flex items-center gap-1"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="https://wa.me/50496489006" class="text-green-600 hover:text-green-800 transition font-medium flex items-center gap-1"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
-    Developed by @LissyBarrera24 | Correo: Lissybuezo1996@gmail.com
+  <footer class="bg-gradient-to-r from-pink-400 via-purple-500 to-blue-500 text-white py-6 mt-16">
+    <p class="text-center">Developed by @lissybarrera24</p>
   </footer>
 
   <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
+    const buttons = document.querySelectorAll('.menu-btn');
+    const sections = document.querySelectorAll('section');
 
-    const sections = document.querySelectorAll('.portafolio__section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.target;
+        sections.forEach(sec => {
+          if (sec.id === target) {
+            sec.classList.remove('hidden');
+            setTimeout(() => sec.classList.add('active'), 50);
+          } else {
+            sec.classList.add('hidden');
+            sec.classList.remove('active');
+          }
+        });
+        document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
       });
     });
   </script>
 
 </body>
+</html>
 </html>
