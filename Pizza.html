@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Catálogo de Pizzas</title>
+
+  <style>
+    :root{
+      --rojo: #d70000;
+      --verde-orden: #28a745;
+      --fondo: #f7f7f7;
+      --card-bg: #ffffff;
+      --texto: #222;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: var(--fondo);
+      color: var(--texto);
+    }
+
+    header{
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    header h1{
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      padding: 12px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .card img{
+      display: block;
+      margin: 0 auto;
+      width: 90%;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card h3{
+      margin: 10px 0 6px;
+      font-size: 1.1rem;
+      color: var(--rojo);
+    }
+
+    .description{
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .price{
+      font-weight: bold;
+      margin: 5px 0;
+      color: var(--rojo);
+    }
+
+    .cantidad-box{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .cantidad-box button{
+      width: 32px;
+      height: 32px;
+      border: none;
+      border-radius: 6px;
+      background: #ddd;
+      cursor: pointer;
+      font-size: 1.2rem;
+    }
+
+    .cantidad-box input{
+      width: 50px;
+      text-align: center;
+      font-size: 1.1rem;
+      padding: 5px;
+    }
+
+    .ordenar-btn{
+      background: var(--verde-orden);
+      color: #fff;
+      padding: 7px 14px;
+      border: none;
+      border-radius: 6px;
+      font-size: .95rem;
+      cursor: pointer;
+      align-self: center;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:480px){.grid{grid-template-columns:1fr;}}
+    @media (min-width:481px) and (max-width:767px){.grid{grid-template-columns:repeat(2,1fr);}}
+    @media (min-width:768px) and (max-width:1023px){.grid{grid-template-columns:repeat(3,1fr);}}
+    @media (min-width:1024px){.grid{grid-template-columns:repeat(4,1fr);}}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Catálogo de Pizzas</h1>
+</header>
+
+<main class="grid">
+
+  <!-- Napolitana -->
+  <article class="card">
+    <img src="https://assets.tmecosys.com/image/upload/t_web_rdp_recipe_584x480/img/recipe/ras/Assets/48a49653c8716457eb0b2f7eb3c7d74c/Derivates/8d83d9ed4567fa15456d8eec7557e60006a15576.jpg" alt="Napolitana">
+    <h3>Napolitana</h3>
+    <p class="description">Pizza tradicional italiana con tomate fresco, mozzarella y albahaca.</p>
+    <div class="price">Desde LPS 180</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Romana -->
+  <article class="card">
+    <img src="https://blogger.googleusercontent.com/img/a/AVvXsEiaFu6CknOtAgYJLxdlJQCamqa2aL9a-P53i8DJWsm52ktnMZ0ioxBbQCLGKYvMPEAZ-IOkHu92GyF5dq1_XaixJFWkMSoC6NfvwN0JpVv-EZCbKUcQAt7P9NUeHI3EGD205A3YUN-r0ij1C5_L3KrLvRWkPQ4uKnWBEMg-qzJKUOh-jrZfgvD1BcmS=s16000" alt="Romana">
+    <h3>Romana</h3>
+    <p class="description">Masa fina y crujiente con sabores inspirados en Roma.</p>
+    <div class="price">Desde LPS 190</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Siciliana -->
+  <article class="card">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6VrG4VB5ILydWpba_LMHNXzKqbN72hPjCwwC5IDPOjq-WFN5dRPF2cujpcWb7koX-em_wE2YLago-pzFZBl87Dfne2W_kl_ar2oxXcDQlZ6lDZRih5fpI4Z5BEJP-2jtYV4rJYR6AT-p8/s1600/pizza_alla_siciliana_3.jpg" alt="Siciliana">
+    <h3>Siciliana</h3>
+    <p class="description">Masa gruesa, ingredientes fuertes y especias mediterráneas.</p>
+    <div class="price">Desde LPS 200</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Masa Fina -->
+  <article class="card">
+    <img src="https://www.aporpizza.es/wp-content/uploads/2019/05/Masa-fina-o-masa-gruesa-fina-1024x640.jpg" alt="Masa Fina">
+    <h3>Masa Fina</h3>
+    <p class="description">Masa extra delgada para un sabor más ligero y crujiente.</p>
+    <div class="price">Desde LPS 170</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Margarita -->
+  <article class="card">
+    <img src="https://cookingitalians.com/wp-content/uploads/2024/11/Margherita-Pizza.jpg" alt="Margarita">
+    <h3>Margarita</h3>
+    <p class="description">Tomate, mozzarella fresca y albahaca aromática.</p>
+    <div class="price">Desde LPS 160</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Pepperoni -->
+  <article class="card">
+    <img src="https://www.recetasnestlecam.com/sites/default/files/styles/crop_article_banner_desktop_nes/public/2024-09/pizza-pepperoni-famosa-receta-con-pepperoni_2.jpg?itok=h1oWkIx-" alt="Pepperoni">
+    <h3>Pepperoni</h3>
+    <p class="description">Clásico y picantito, con rodajas de pepperoni crocante.</p>
+    <div class="price">Desde LPS 175</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Cuatro Quesos -->
+  <article class="card">
+    <img src="https://www.novachef.es/media/images/pizza-cuatro-quesos.jpg" alt="Cuatro Quesos">
+    <h3>Cuatro Quesos</h3>
+    <p class="description">Mozzarella, parmesano, cheddar y gorgonzola derretidos.</p>
+    <div class="price">Desde LPS 210</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Hawaiana -->
+  <article class="card">
+    <img src="https://buenprovecho.hn/wp-content/uploads/2021/03/pizzas.jpg" alt="Hawaiana">
+    <h3>Hawaiana</h3>
+    <p class="description">Mezcla de jamón y piña para un sabor dulce y salado.</p>
+    <div class="price">Desde LPS 185</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Marinara -->
+  <article class="card">
+    <img src="https://ourplantbasedworld.com/wp-content/uploads/2021/03/Pizza-marinara-9854.jpg" alt="Marinara">
+    <h3>Marinara</h3>
+    <p class="description">Tomate, ajo, orégano y aceite de oliva. Sencilla y deliciosa.</p>
+    <div class="price">Desde LPS 150</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- Cuatro Estaciones -->
+  <article class="card">
+    <img src="https://i0.wp.com/pizzaenergia.es/wp-content/uploads/2024/02/4-estaciones.png?fit=1600%2C1600&ssl=1" alt="Cuatro Estaciones">
+    <h3>Cuatro Estaciones</h3>
+    <p class="description">Pizza dividida en 4 sabores: jamón, champiñón, aceitunas y alcachofa.</p>
+    <div class="price">Desde LPS 230</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+  <!-- De Pollo -->
+  <article class="card">
+    <img src="https://sandersonfarms.com/wp-content/uploads/2018/08/ChickenPizza.jpg" alt="De Pollo">
+    <h3>De Pollo</h3>
+    <p class="description">Pollo jugoso, queso derretido y vegetales frescos.</p>
+    <div class="price">Desde LPS 190</div>
+    <div class="cantidad-box">
+      <button onclick="cambiarCantidad(this,-1)">-</button>
+      <input type="text" value="1" disabled>
+      <button onclick="cambiarCantidad(this,1)">+</button>
+    </div>
+    <button class="ordenar-btn" onclick="ordenarPizza(this)">Ordenar</button>
+  </article>
+
+</main>
+
+<script>
+function cambiarCantidad(btn, cambio){
+  const input = btn.parentElement.querySelector('input');
+  let valor = parseInt(input.value);
+  valor += cambio;
+  if(valor < 1) valor = 1;
+  input.value = valor;
+}
+
+function ordenarPizza(btn){
+  const card = btn.parentElement;
+  const nombre = card.querySelector('h3').innerText;
+  const cantidad = card.querySelector('input').value;
+  const precio = card.querySelector('.price').innerText;
+  alert(`Has ordenado ${cantidad} pizza(s) de ${nombre}\nPrecio unitario: ${precio}`);
+}
+</script>
+</body>
+</html>
