@@ -654,3 +654,240 @@ El original
 </body>
 </html>
 
+Portafolio definitivo
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lissy Darithza Barrera - Mi Portafolio Profesional</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <style>
+    /* BEM Mejorado */
+    .portafolio__header { background-color: #1E40AF; }
+    .portafolio__nav-item:hover { color: #60A5FA; }
+    .portafolio__section { padding-top: 5rem; padding-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease-in-out; }
+    .portafolio__section--visible { opacity: 1; transform: translateY(0); }
+    .portafolio__card, .portafolio__project-card { transition: transform 0.3s, box-shadow 0.3s; }
+    .portafolio__card:hover, .portafolio__project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
+    .gradient-text { background: linear-gradient(90deg, #3B82F6, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .portafolio__skill-bar { background-color: #E5E7EB; border-radius: 9999px; overflow: hidden; height: 1rem; }
+    .portafolio__skill-fill { height: 100%; width: 0%; transition: width 1.5s ease-in-out; background: linear-gradient(to right, #6366F1, #EC4899); }
+    .portafolio__social-floating { position: fixed; top: 50%; left: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.5rem; z-index: 50; }
+    .portafolio__social-floating a { background-color: #1E40AF; color: white; padding: 0.6rem; border-radius: 0 8px 8px 0; transition: all 0.3s; }
+    .portafolio__social-floating a:hover { background-color: #9333EA; transform: translateX(5px); }
+    .portafolio__project-image { width: 100%; height: 200px; object-fit: contain; border-radius: 0.5rem; margin-bottom: 1rem; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <!-- Redes flotantes -->
+  <div class="portafolio__social-floating">
+    <a href="https://github.com/LissyBarrera24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+    <a href="https://t.me/LissyBarrera" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+    <a href="https://wa.me/50496489006" target="_blank" aria-label="WhatsApp" class="bg-green-500 hover:bg-green-600"><i class="fab fa-whatsapp"></i></a>
+  </div>
+
+  <!-- Header -->
+  <header class="portafolio__header text-white fixed w-full z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-2xl font-bold">Lissy Darithza Barrera</h1>
+      <nav aria-label="Menú principal">
+        <ul class="flex space-x-6">
+          <li><a href="#inicio" class="portafolio__nav-item font-semibold">Inicio</a></li>
+          <li><a href="#biografia" class="portafolio__nav-item font-semibold">Biografía</a></li>
+          <li><a href="#experiencia" class="portafolio__nav-item font-semibold">Experiencia</a></li>
+          <li><a href="#proyectos" class="portafolio__nav-item font-semibold">Proyectos</a></li>
+          <li><a href="#habilidades" class="portafolio__nav-item font-semibold">Habilidades</a></li>
+          <li><a href="#cursos" class="portafolio__nav-item font-semibold">Cursos</a></li>
+          <li><a href="#contacto" class="portafolio__nav-item font-semibold">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Inicio -->
+  <section id="inicio" class="portafolio__section bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-center text-white pt-32">
+    <h2 class="text-5xl font-bold mb-4 gradient-text">¡Hola! Soy Lissy Darithza Barrera</h2>
+    <p class="text-xl mb-6">Soy una estudiante de programación y profesional en consejería escolar</p>
+    <div class="flex justify-center gap-4 mt-6">
+      <a href="#contacto" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
+      <a href="#habilidades" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
+    </div>
+  </section>
+
+  <!-- Biografía -->
+  <section id="biografia" class="portafolio__section container mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-6 text-center gradient-text">Biografía</h2>
+    <p class="text-lg text-justify">Soy una persona comprometida, dedicada actualmente estudiante de Programación en la carrera de Técnico Universitario en Desarrollo de Aplicaciones Web. Poseo experiencia en el área educativa trabajando como Consejera, Asistente Administrativa y Tutora. Me caracterizo por mantener una comunicación clara, actitud empática y un alto sentido de responsabilidad en cada una de mis tareas. Cuento con experiencia en el área educativa desempeñándome como consejera estudiantil, asistente administrativa y tutora académica. Me motiva aprender nuevas tecnologías y herramientas, aplicándolas en proyectos que generen un impacto positivo. Busco combinar creatividad, eficiencia y compromiso en cada proyecto, desarrollando soluciones innovadoras que contribuyan tanto al ámbito educativo como al tecnológico. Mi objetivo es seguir creciendo profesionalmente, aportando mis conocimientos y habilidades en entornos colaborativos y desafiantes.</p>
+  </section>
+
+  <!-- Experiencia Laboral -->
+  <section id="experiencia" class="portafolio__section bg-gradient-to-r from-purple-100 to-pink-100 py-16 px-4">
+    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Experiencia Laboral</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
+        <h3 class="font-bold text-xl mb-2 text-purple-700">Consejera Estudiantil</h3>
+        <span class="text-gray-500">2025 - Actualidad</span>
+        <p class="mt-2 text-gray-700">Hacer el diario semanal para que firmaran los maestros, Atención y acompañamiento a estudiantes, Apoyo en las actividades institucionales, Apoyo en elaboración de horarios de exámenes, Apoyo en supervisión de exámenes.</p>
+      </div>
+      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
+        <h3 class="font-bold text-xl mb-2 text-purple-700">Asistente de Secretaría</h3>
+        <span class="text-gray-500">2023 - 2024</span>
+        <p class="mt-2 text-gray-700">Elaboración de trabajos secretariales en computadora, Subir notas a SACE, Apoyar en diferentes áreas administrativas, Elaboración de informes en computadora, Entregar notas, Llenar el libro de matrículas, Llenar los expedientes de los alumnos.</p>
+      </div>
+      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
+        <h3 class="font-bold text-xl mb-2 text-purple-700">Tutora Académica</h3>
+        <span class="text-gray-500">2024 - 2025</span>
+        <p class="mt-2 text-gray-700">Brindé tutorías personalizadas de matemáticas, español y diversas materias, Enseñé a leer y a escribir, Elaboré trabajos manuales.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proyectos Destacados -->
+  <section id="proyectos" class="portafolio__section container mx-auto px-4 py-16">
+    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Proyectos Destacados</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Proyecto 1 -->
+      <div class="portafolio__project-card bg-white rounded-xl shadow-md p-6">
+        <img src="https://clubolimpia.com/wp-content/uploads/2016/08/Web-DrELMER-Olimpia-639x359.jpg" alt="Sistema de venta de boletos" class="portafolio__project-image">
+        <h3 class="text-xl font-bold text-purple-700 mb-2">Sistema de Venta de Boletos</h3>
+        <p class="text-gray-700">En este proyecto trabajamos en vender boletos de los partidos de fútbol, ya sea VIP, palco o sombra, y la disponibilidad de asientos.</p>
+      </div>
+
+      <!-- Proyecto 2-->
+      <div class="portafolio__project-card bg-white rounded-xl shadow-md p-6">
+        <img src="https://bavette.es/wp-content/uploads/bunuelos-rellenos-receta.jpg" alt="Dulces Tentaciones" class="portafolio__project-image">
+        <h3 class="text-xl font-bold text-purple-700 mb-2">Dulces Tentaciones - Panadería para Diabéticos</h3>
+        <p class="text-gray-700">Creamos una página web donde los clientes podían ver los postres saludables que ofrecíamos y conocer los ingredientes utilizados para que fueran saludables. Hicimos un catálogo digital para mostrárselo a los clientes y también creamos cuentas en Facebook, Instagram y TikTok.</p>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="portafolio__project-card bg-white rounded-xl shadow-md p-6">
+        <img src="https://cdn7.kiwilimon.com/articuloimagen/32308/564x846/32455.jpg.webp" alt="Recetario de Comidas" class="portafolio__project-image">
+        <h3 class="text-xl font-bold text-purple-700 mb-2">Recetario de Comidas</h3>
+        <p class="text-gray-700">En este proyecto pusimos todos los tipos de comidas que les gustaban a los clientes. Podían seleccionar los platillos y, a medida que seleccionaban, se desplegaba más información sobre cada platillo.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Habilidades técnicas -->
+  <section id="habilidades" class="portafolio__section container mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Habilidades Técnicas</h2>
+    <div class="space-y-6 max-w-xl mx-auto">
+      <div>
+        <p class="font-semibold mb-1">HTML / CSS / Tailwind</p>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="80%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">JavaScript</p>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="70%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">Java</p>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="75%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">Git / GitHub</p>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="85%"></div></div>
+      </div>
+      <div>
+        <p class="font-semibold mb-1">Figma / UI Design</p>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cursos y Certificaciones -->
+  <section id="cursos" class="portafolio__section container mx-auto px-4">
+    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Cursos y Certificaciones</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <!-- Curso de Computacion -->
+      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://image.shutterstock.com/image-photo/teacher-giving-computer-science-lecture-600nw-2326351789.jpg" alt="Curso de Computación" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Computación</h3>
+        <p class="text-gray-700">Adquirí conocimientos fundamentales y herramientas básicas de productividad: procesamiento de texto y hojas de cálculo, uso avanzado de Word y Excel para crear documentos, tablas, fórmulas y gráficos; presentaciones digitales atractivas con PowerPoint; navegación segura en internet y búsqueda eficiente de información; introducción a la programación y proceso lógico, conceptos básicos de algoritmos y resolución de problemas mediante secuencias lógicas.</p>
+        <span class="text-gray-500">2023</span>
+      </div>
+
+      <!-- Curso de Finanzas -->
+      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://www.educaciontrespuntocero.com/cursos/wp-content/uploads/2023/04/cursos-de-finanzas-destacada-min.jpg" alt="Curso Cómo Ordenar Mis Finanzas" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Cómo Ordenar Mis Finanzas</h3>
+        <p class="text-gray-700">Durante este curso aprendí: 1- Registrar ingresos y gastos; 2- Crear presupuestos mensuales; 3- Priorizar necesidades y deseos; 4- Ahorrar de manera efectiva; 5- Planificación de compras importantes para no afectar el presupuesto.</p>
+        <span class="text-gray-500">2018</span>
+      </div>
+
+      <!-- Curso de Programación -->
+      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" alt="Curso de Programación" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Programación</h3>
+        <p class="text-gray-700">Aprendí fundamentos de programación, variables, tipos de datos, operadores, estructuras de control; funciones y métodos reutilizables; programación orientada a objetos: clases, objetos, herencia, encapsulación y polimorfismo.</p>
+        <span class="text-gray-500">2025</span>
+      </div>
+
+      <!-- Curso de Sinergia -->
+      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
+        <img src="https://ceutec.hn/wp-content/uploads/2025/06/sinergia-dia-2-12.jpg" alt="Curso de Sinergia" class="w-24 h-24 rounded-full mb-4 object-cover">
+        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Sinergia</h3>
+        <p class="text-gray-700">En este curso aprendí sobre logística, tecnología, mercadotecnia, economía, periodismo, salud, liderazgo e inteligencia artificial. Fue muy enriquecedor y diverso.</p>
+        <span class="text-gray-500">2025</span>
+      </div>
+
+    </div>
+  </section>
+
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto" class="portafolio__section bg-gradient-to-r from-purple-50 to-pink-50 py-16 px-4">
+    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Contacto</h2>
+    <form action="#" class="portafolio__form max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
+      <label for="nombre" class="block font-semibold">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
+      <label for="correo" class="block font-semibold">Correo:</label>
+      <input type="email" id="correo" name="correo" value="Lissybuezo1996@gmail.com" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
+      <label for="mensaje" class="block font-semibold">Mensaje:</label>
+      <textarea id="mensaje" name="mensaje" rows="5" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required></textarea>
+      <button type="submit" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Enviar Mensaje</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-6">
+    Developed by @LissyBarrera24 | Correo: Lissybuezo1996@gmail.com
+  </footer>
+
+  <script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+
+    // Animaciones de secciones
+    const sections = document.querySelectorAll('.portafolio__section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('portafolio__section--visible'); } });
+    }, { threshold: 0.2 });
+    sections.forEach(section => observer.observe(section));
+
+    // Animaciones de barras de habilidades
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.portafolio__skill-fill').forEach(bar => {
+        bar.style.width = bar.getAttribute('data-width');
+      });
+    });
+  </script>
+
+</body>
+</html>
+
