@@ -1,660 +1,3 @@
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lissy Darithza - Portafolio Profesional</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    .portafolio__header { background-color: #1E40AF; }
-    .portafolio__nav-item:hover { color: #60A5FA; }
-    .portafolio__section { padding-top: 5rem; padding-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease-in-out; }
-    .portafolio__section.visible { opacity: 1; transform: translateY(0); }
-    .portafolio__card { transition: transform 0.3s, box-shadow 0.3s; }
-    .portafolio__card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
-    .gradient-text { background: linear-gradient(90deg, #3B82F6, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .skill-bar { background-color: #E5E7EB; border-radius: 9999px; overflow: hidden; height: 1rem; }
-    .skill-fill { height: 100%; width: 0%; transition: width 1.5s ease-in-out; background: linear-gradient(to right, #6366F1, #EC4899); }
-    .social-floating { position: fixed; top: 50%; left: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.5rem; z-index: 50; }
-    .social-floating a { background-color: #1E40AF; color: white; padding: 0.6rem; border-radius: 0 8px 8px 0; transition: all 0.3s; }
-    .social-floating a:hover { background-color: #9333EA; transform: translateX(5px); }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-  <!-- Redes flotantes -->
-  <div class="social-floating">
-    <a href="https://github.com/LissyBarrera24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://t.me/LissyBarrera" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-
-  <!-- Header -->
-  <header class="portafolio__header text-white fixed w-full z-50 shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Lissy Darithza</h1>
-      <nav aria-label="Menú principal">
-        <ul class="flex space-x-6">
-          <li><a href="#inicio" class="portafolio__nav-item font-semibold">Inicio</a></li>
-          <li><a href="#biografia" class="portafolio__nav-item font-semibold">Biografía</a></li>
-          <li><a href="#experiencia" class="portafolio__nav-item font-semibold">Experiencia</a></li>
-          <li><a href="#proyectos" class="portafolio__nav-item font-semibold">Proyectos</a></li>
-          <li><a href="#habilidades" class="portafolio__nav-item font-semibold">Habilidades</a></li>
-          <li><a href="#cursos" class="portafolio__nav-item font-semibold">Cursos</a></li>
-          <li><a href="#contacto" class="portafolio__nav-item font-semibold">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Inicio -->
-  <section id="inicio" class="portafolio__section bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-center text-white pt-32">
-    <h2 class="text-5xl font-bold mb-4 gradient-text">¡Hola! Soy Lissy Darithza</h2>
-    <p class="text-xl mb-6">Estudiante de programación y profesional en consejería escolar</p>
-    <div class="flex justify-center gap-4 mt-6">
-      <a href="#contacto" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
-      <a href="#habilidades" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
-    </div>
-  </section>
-
-  <!-- Biografía -->
-  <section id="biografia" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-6 text-center gradient-text">Biografía</h2>
-    <p class="text-lg text-justify">Desde mi punto de vista, la combinación de habilidades técnicas y humanas es fundamental para el desarrollo profesional. Actualmente estudio programación mientras trabajo como consejera escolar, aplicando conocimientos en tecnología y comunicación efectiva. Me apasiona crear soluciones digitales con diseño atractivo y funcionalidad intuitiva.</p>
-  </section>
-
-  <!-- Experiencia laboral -->
-  <section id="experiencia" class="portafolio__section bg-gradient-to-r from-purple-100 to-pink-100 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Experiencia Laboral</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Consejera Escolar</h3>
-        <span class="text-gray-500">2025 - Actualidad</span>
-        <p class="mt-2 text-gray-700">Orientación académica, apoyo en proyectos educativos y gestión de comunicación entre estudiantes, docentes y familias.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Asistente de Secretaría</h3>
-        <span class="text-gray-500">2023 - 2024</span>
-        <p class="mt-2 text-gray-700">Gestión administrativa, coordinación de agendas, manejo de documentos y atención directa a clientes y personal.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Proyecto Académico de Programación</h3>
-        <span class="text-gray-500">2024 - 2025</span>
-        <p class="mt-2 text-gray-700">Desarrollo de aplicaciones web con HTML, CSS, JavaScript y Tailwind CSS aplicando buenas prácticas de interfaz de usuario y accesibilidad.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Habilidades técnicas -->
-  <section id="habilidades" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Habilidades Técnicas</h2>
-    <div class="space-y-6 max-w-xl mx-auto">
-      <div>
-        <p class="font-semibold mb-1">HTML / CSS / Tailwind</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">JavaScript</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Java</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Git / GitHub</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Figma / UI Design</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cursos y Certificaciones -->
-  <section id="cursos" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Cursos y Certificaciones</h2>
-    <div class="grid md-grid-cols-2 lg:grid-cols-4 gap-6">
-      <!-- Curso de Computación -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://image.shutterstock.com/image-photo/teacher-giving-computer-science-lecture-600nw-2326351789.jpg" alt="Curso de Computación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Computación</h3>
-        <span class="text-gray-500">2023</span>
-      </div>
-
-      <!-- Curso de Finanzas -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.educaciontrespuntocero.com/cursos/wp-content/uploads/2023/04/cursos-de-finanzas-destacada-min.jpg" alt="Curso Cómo Ordenar Mis Finanzas" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Cómo Ordenar Mis Finanzas</h3>
-        <span class="text-gray-500">2018</span>
-      </div>
-
-      <!-- Curso de Programación (con enlace) -->
-      <a href="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" target="_blank" class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" alt="Curso de Programación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Programación</h3>
-        <span class="text-gray-500">2025</span>
-      </a>
-
-      <!-- Curso de Sinergia -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://via.placeholder.com/100x100.png?text=Sinergia" alt="Curso de Sinergia" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Sinergia</h3>
-        <span class="text-gray-500">2025</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="portafolio__section bg-gradient-to-r from-purple-50 to-pink-50 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Contacto</h2>
-    <form class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
-      <label for="nombre" class="block font-semibold">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="correo" class="block font-semibold">Correo:</label>
-      <input type="email" id="correo" name="correo" value="Lissybuezo1996@gmail.com" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="mensaje" class="block font-semibold">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required></textarea>
-      <button type="submit" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Enviar Mensaje</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
-    Developed by @LissyBarrera24 | Correo: Lissybuezo1996@gmail.com
-  </footer>
-
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    const sections = document.querySelectorAll('.portafolio__section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width');
-      });
-    });
-  </script>
-
-</body>
-</html>
-
-
-
-
-
-
-
-
-Segundo
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lissy Darithza - Portafolio Profesional</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    .portafolio__header { background-color: #1E40AF; }
-    .portafolio__nav-item:hover { color: #60A5FA; }
-    .portafolio__section { padding-top: 5rem; padding-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease-in-out; }
-    .portafolio__section.visible { opacity: 1; transform: translateY(0); }
-    .portafolio__card { transition: transform 0.3s, box-shadow 0.3s; }
-    .portafolio__card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
-    .gradient-text { background: linear-gradient(90deg, #3B82F6, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .skill-bar { background-color: #E5E7EB; border-radius: 9999px; overflow: hidden; height: 1rem; }
-    .skill-fill { height: 100%; width: 0%; transition: width 1.5s ease-in-out; background: linear-gradient(to right, #6366F1, #EC4899); }
-    .social-floating { position: fixed; top: 50%; left: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.5rem; z-index: 50; }
-    .social-floating a { background-color: #1E40AF; color: white; padding: 0.6rem; border-radius: 0 8px 8px 0; transition: all 0.3s; }
-    .social-floating a:hover { background-color: #9333EA; transform: translateX(5px); }
-    .project-card { background:white; border-radius:1rem; overflow:hidden; transition:transform 0.3s, box-shadow 0.3s; }
-    .project-card:hover { transform:translateY(-8px); box-shadow:0 20px 30px rgba(0,0,0,0.2); }
-    .project-image { width:100%; height:200px; object-fit:cover; }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-  <!-- Redes flotantes -->
-  <div class="social-floating">
-    <a href="https://github.com/LissyBarrera24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://t.me/LissyBarrera" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-
-  <!-- Header -->
-  <header class="portafolio__header text-white fixed w-full z-50 shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Lissy Darithza</h1>
-      <nav aria-label="Menú principal">
-        <ul class="flex space-x-6">
-          <li><a href="#inicio" class="portafolio__nav-item font-semibold">Inicio</a></li>
-          <li><a href="#biografia" class="portafolio__nav-item font-semibold">Biografía</a></li>
-          <li><a href="#experiencia" class="portafolio__nav-item font-semibold">Experiencia</a></li>
-          <li><a href="#proyectos" class="portafolio__nav-item font-semibold">Proyectos</a></li>
-          <li><a href="#habilidades" class="portafolio__nav-item font-semibold">Habilidades</a></li>
-          <li><a href="#cursos" class="portafolio__nav-item font-semibold">Cursos</a></li>
-          <li><a href="#contacto" class="portafolio__nav-item font-semibold">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Inicio -->
-  <section id="inicio" class="portafolio__section bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-center text-white pt-32">
-    <h2 class="text-5xl font-bold mb-4 gradient-text">¡Hola! Soy Lissy Darithza</h2>
-    <p class="text-xl mb-6">Estudiante de programación y profesional en consejería escolar</p>
-    <div class="flex justify-center gap-4 mt-6">
-      <a href="#contacto" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
-      <a href="#habilidades" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
-    </div>
-  </section>
-
-  <!-- Biografía -->
-  <section id="biografia" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-6 text-center gradient-text">Biografía</h2>
-    <p class="text-lg text-justify">Desde mi punto de vista, la combinación de habilidades técnicas y humanas es fundamental para el desarrollo profesional. Actualmente estudio programación mientras trabajo como consejera escolar, aplicando conocimientos en tecnología y comunicación efectiva. Me apasiona crear soluciones digitales con diseño atractivo y funcionalidad intuitiva.</p>
-  </section>
-
-  <!-- Experiencia laboral -->
-  <section id="experiencia" class="portafolio__section bg-gradient-to-r from-purple-100 to-pink-100 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Experiencia Laboral</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Consejera Escolar</h3>
-        <span class="text-gray-500">2025 - Actualidad</span>
-        <p class="mt-2 text-gray-700">Orientación académica, apoyo en proyectos educativos y gestión de comunicación entre estudiantes, docentes y familias.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Asistente de Secretaría</h3>
-        <span class="text-gray-500">2023 - 2024</span>
-        <p class="mt-2 text-gray-700">Gestión administrativa, coordinación de agendas, manejo de documentos y atención directa a clientes y personal.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Proyecto Académico de Programación</h3>
-        <span class="text-gray-500">2024 - 2025</span>
-        <p class="mt-2 text-gray-700">Desarrollo de aplicaciones web con HTML, CSS, JavaScript y Tailwind CSS aplicando buenas prácticas de interfaz de usuario y accesibilidad.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proyectos destacados -->
-  <section id="proyectos" class="portafolio__section container mx-auto px-4 py-16">
-    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Proyectos Destacados</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Proyecto 1 -->
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x200.png?text=Recetario+de+Comidas" alt="Recetario de Comidas" class="project-image">
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-purple-700 mb-2">Página Web de Comidas</h3>
-          <p class="text-gray-700 mb-4">Recetario en línea donde los usuarios podían consultar todos los tipos de comidas disponibles, con interfaz intuitiva y diseño atractivo.</p>
-        </div>
-      </div>
-
-      <!-- Proyecto 2 -->
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x200.png?text=Dulces+Tentaciones" alt="Dulces Tentaciones" class="project-image">
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-purple-700 mb-2">Dulces Tentaciones - Panadería para Diabéticos</h3>
-          <p class="text-gray-700 mb-4">Página web, app para Play Store, redes sociales en Facebook e Instagram y un catálogo digital para postres saludables destinados a personas diabéticas.</p>
-        </div>
-      </div>
-
-      <!-- Proyecto 3 -->
-      <div class="project-card">
-        <img src="https://via.placeholder.com/400x200.png?text=Sistema+de+Boletos" alt="Sistema de Boletos" class="project-image">
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-purple-700 mb-2">Sistema de Venta de Boletos</h3>
-          <p class="text-gray-700 mb-4">Aplicación en Java con interfaz gráfica para gestión de boletos, control de precios y disponibilidad de asientos.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Habilidades técnicas -->
-  <section id="habilidades" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Habilidades Técnicas</h2>
-    <div class="space-y-6 max-w-xl mx-auto">
-      <div>
-        <p class="font-semibold mb-1">HTML / CSS / Tailwind</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">JavaScript</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Java</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Git / GitHub</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Figma / UI Design</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cursos y Certificaciones -->
-  <section id="cursos" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Cursos y Certificaciones</h2>
-    <div class="grid md-grid-cols-2 lg:grid-cols-4 gap-6">
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://image.shutterstock.com/image-photo/teacher-giving-computer-science-lecture-600nw-2326351789.jpg" alt="Curso de Computación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Computación</h3>
-        <span class="text-gray-500">2023</span>
-      </div>
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.educaciontrespuntocero.com/cursos/wp-content/uploads/2023/04/cursos-de-finanzas-destacada-min.jpg" alt="Curso Cómo Ordenar Mis Finanzas" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Cómo Ordenar Mis Finanzas</h3>
-        <span class="text-gray-500">2018</span>
-      </div>
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" alt="Curso de Programación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Programación</h3>
-        <span class="text-gray-500">2025</span>
-      </div>
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://via.placeholder.com/100x100.png?text=Sinergia" alt="Curso de Sinergia" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Sinergia</h3>
-        <span class="text-gray-500">2025</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="portafolio__section bg-gradient-to-r from-purple-50 to-pink-50 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Contacto</h2>
-    <form class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
-      <label for="nombre" class="block font-semibold">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="correo" class="block font-semibold">Correo:</label>
-      <input type="email" id="correo" name="correo" value="Lissybuezo1996@gmail.com" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="mensaje" class="block font-semibold">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required></textarea>
-      <button type="submit" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Enviar Mensaje</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
-    Developed by @LissyBarrera24 | Correo: Lissybuezo1996@gmail.com
-  </footer>
-
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    const sections = document.querySelectorAll('.portafolio__section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width');
-      });
-    });
-  </script>
-
-</body>
-</html>
-
-
-
-El original
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lissy Darithza - Portafolio Profesional</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <style>
-    .portafolio__header { background-color: #1E40AF; }
-    .portafolio__nav-item:hover { color: #60A5FA; }
-    .portafolio__section { padding-top: 5rem; padding-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease-in-out; }
-    .portafolio__section.visible { opacity: 1; transform: translateY(0); }
-    .portafolio__card, .project-card { transition: transform 0.3s, box-shadow 0.3s; }
-    .portafolio__card:hover, .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.2); }
-    .gradient-text { background: linear-gradient(90deg, #3B82F6, #9333EA); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    .skill-bar { background-color: #E5E7EB; border-radius: 9999px; overflow: hidden; height: 1rem; }
-    .skill-fill { height: 100%; width: 0%; transition: width 1.5s ease-in-out; background: linear-gradient(to right, #6366F1, #EC4899); }
-    .social-floating { position: fixed; top: 50%; left: 0; transform: translateY(-50%); display: flex; flex-direction: column; gap: 0.5rem; z-index: 50; }
-    .social-floating a { background-color: #1E40AF; color: white; padding: 0.6rem; border-radius: 0 8px 8px 0; transition: all 0.3s; }
-    .social-floating a:hover { background-color: #9333EA; transform: translateX(5px); }
-    .project-image { width: 100%; height: 200px; object-fit: cover; border-radius: 0.5rem; margin-bottom: 1rem; }
-  </style>
-</head>
-<body class="bg-gray-50 text-gray-800 font-sans">
-
-  <!-- Redes flotantes -->
-  <div class="social-floating">
-    <a href="https://github.com/LissyBarrera24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-    <a href="https://t.me/LissyBarrera" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
-    <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-  </div>
-
-  <!-- Header -->
-  <header class="portafolio__header text-white fixed w-full z-50 shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-2xl font-bold">Lissy Darithza</h1>
-      <nav aria-label="Menú principal">
-        <ul class="flex space-x-6">
-          <li><a href="#inicio" class="portafolio__nav-item font-semibold">Inicio</a></li>
-          <li><a href="#biografia" class="portafolio__nav-item font-semibold">Biografía</a></li>
-          <li><a href="#experiencia" class="portafolio__nav-item font-semibold">Experiencia</a></li>
-          <li><a href="#proyectos" class="portafolio__nav-item font-semibold">Proyectos</a></li>
-          <li><a href="#habilidades" class="portafolio__nav-item font-semibold">Habilidades</a></li>
-          <li><a href="#cursos" class="portafolio__nav-item font-semibold">Cursos</a></li>
-          <li><a href="#contacto" class="portafolio__nav-item font-semibold">Contacto</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Inicio -->
-  <section id="inicio" class="portafolio__section bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-center text-white pt-32">
-    <h2 class="text-5xl font-bold mb-4 gradient-text">¡Hola! Soy Lissy Darithza</h2>
-    <p class="text-xl mb-6">Estudiante de programación y profesional en consejería escolar</p>
-    <div class="flex justify-center gap-4 mt-6">
-      <a href="#contacto" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
-      <a href="#habilidades" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
-    </div>
-  </section>
-
-  <!-- Biografía -->
-  <section id="biografia" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-6 text-center gradient-text">Biografía</h2>
-    <p class="text-lg text-justify">Soy una persona comprometida, dedicada actualmente estudiante de Programacion en la carrera de Tecnico Universitario En Desarrollo De Aplicaciones Web poseo experiencia en el area educativa trabajando como Consejera, asitente administrativa y tutora, me caracterizo por mantener una comunicacion clara, una actitud empatica y un alto sentido de responsabilidad en cada una de mis tareas.</p>
-  </section>
-
-  <!-- Experienc
-  <section id="experiencia" class="portafolio__section bg-gradient-to-r from-purple-100 to-pink-100 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Experiencia Laboral</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Consejera Estudiantil</h3>
-        <span class="text-gray-500">2025 - Actualidad</span>
-        <p class="mt-2 text-gray-700">Hacer el diario semanal para que firmaran los maestros, Atencion y acompañamiento a estudaintes, Apoyo en las actividades institucionales, Apoyo en elaboracion de horarios de examenes, Apoyo en supervision de examenes.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Asistente de Secretaría</h3>
-        <span class="text-gray-500">2023 - 2024</span>
-        <p class="mt-2 text-gray-700">Elaboracion de trabajos secretariales en computadora, Subir notas a SACE, Apoyar en diferentes areas administrativas, Elaboracion de informes en computadora, Entregar notas, Llenar el libro de matriculas, Llenar los expedientes de los alumnos.</p>
-      </div>
-      <div class="portafolio__card bg-white p-6 rounded-xl shadow-md">
-        <h3 class="font-bold text-xl mb-2 text-purple-700">Tutora Academica</h3>
-        <span class="text-gray-500">2024 - 2025</span>
-        <p class="mt-2 text-gray-700">Brinde tutorias personalizadas de matematicas, español y diversas materias, Enseñe a leer y a escribir, Elabore trabajos manuales.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Proyectos Destacados -->
-  <section id="proyectos" class="portafolio__section container mx-auto px-4 py-16">
-    <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Proyectos Destacados</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <!-- Proyecto 1: Sistema de venta de boletos -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6">
-        <img src="https://clubolimpia.com/wp-content/uploads/2016/08/Web-DrELMER-Olimpia-639x359.jpg" alt="Sistema de venta de boletos" class="project-image">
-        <h3 class="text-xl font-bold text-purple-700 mb-2">Sistema de Venta de Boletos</h3>
-        <p class="text-gray-700">En este proyecto trabajamos en vender boletos de los partidos de fútbol, ya sea VIP, palco o sombra, y la disponibilidad de asientos.</p>
-      </div>
-
-      <!-- Proyecto 2: Dulces Tentaciones -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6">
-        <img src="C:\Users\Donaire\Downloads\WhatsApp Image 2025-12-06 at 5.01.41 PM.jpeg" alt="Dulces Tentaciones" class="project-image">
-        <h3 class="text-xl font-bold text-purple-700 mb-2">Dulces Tentaciones - Panadería para Diabéticos</h3>
-        <p class="text-gray-700">Creamos una página web en donde los clientes podían ver los postres saludables que les ofrecíamos y conocer los ingredientes utilizados para que fueran saludables. Hicimos un catálogo digital para mostrárselo a los clientes y también creamos cuentas en Facebook, Instagram y TikTok.</p>
-      </div>
-
-      <!-- Proyecto 3: Recetario de comidas -->
-      <div class="project-card bg-white rounded-xl shadow-md p-6">
-        <img src="https://cdn7.kiwilimon.com/articuloimagen/32308/564x846/32455.jpg.webp" alt="Recetario de Comidas" class="project-image">
-        <h3 class="text-xl font-bold text-purple-700 mb-2">Recetario de Comidas</h3>
-        <p class="text-gray-700">En este proyecto pusimos todos los tipos de comidas que les gustaban a los clientes. Podían seleccionar los platillos y, a medida que seleccionaban, se desplegaba más información sobre cada platillo.</p>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Habilidades técnicas -->
-  <section id="habilidades" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Habilidades Técnicas</h2>
-    <div class="space-y-6 max-w-xl mx-auto">
-      <div>
-        <p class="font-semibold mb-1">HTML / CSS / Tailwind</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="90%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">JavaScript</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="80%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Java</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="75%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Git / GitHub</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="85%"></div></div>
-      </div>
-      <div>
-        <p class="font-semibold mb-1">Figma / UI Design</p>
-        <div class="skill-bar"><div class="skill-fill" data-width="70%"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cursos y Certificaciones -->
-  <section id="cursos" class="portafolio__section container mx-auto px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Cursos y Certificaciones</h2>
-    <div class="grid md-grid-cols-2 lg:grid-cols-4 gap-6">
-
-      <!-- Curso de Computación -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://image.shutterstock.com/image-photo/teacher-giving-computer-science-lecture-600nw-2326351789.jpg" alt="Curso de Computación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Computación</h3>
-        <p class="text-gray-700">En este curso adquiri conocimientos fundamentales asi como herramientas basicas de productividad. Esto fue lo que aprendi procesamiento de texto y hojas de calculo uso avanzado de Word y Excel para crear documentos, tablas, formulas y graficos.Presentaciones digitales diseño de presentaciones atractivasy funcionales con PowerPoint o algunas herramientas similares. Navegacion segura en internet la busqueda eficiente de informacion y buenas practicas de seguridad en linea.Introduccion a la programacion y proceso logico conceptos basicos de algoritmos y resolucion de problemas mediante secuencias logicas. </p>
-        <span class="text-gray-500">2023</span>
-      </div>
-
-      <!-- Curso de Finanzas -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.educaciontrespuntocero.com/cursos/wp-content/uploads/2023/04/cursos-de-finanzas-destacada-min.jpg" alt="Curso Cómo Ordenar Mis Finanzas" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Cómo Ordenar Mis Finanzas</h3>
-        <p class="text-gray-700">Durante este curso aprendi: 1- A registrar los ingresos y gastos llevar un control detallado de todo el dinero que entra y sale entendiendo mis patrones de consumo. 2- Crear presupuestos mensuales establecer un plan de gastos mensual para organizar mis finanzas y cumplir metas economicas. 3- Priorizar necesidades y deseos diferenciar entre gastos esenciales y gestos inncesarios para optimizar mis recursos. Ahorra de manera efectiva implementar estrategias para ahorar dinero y craer un fondo de emergencia. 5- Planificacion de compras importantes aprender a planificar y evaluar compras grandes para no afectar mi presupuesto. </p>
-        <span class="text-gray-500">2018</span>
-      </div>
-
-      <!-- Curso de Programación -->
-      <a href="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" target="_blank" class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" alt="Curso de Programación" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Programación</h3>
-        <p class="text-gray-700">Durante este curso aprendi: 1-Fundamentos de programacion comprendi conceptos basicos como variables, tipos de datos, operadores y estructura de control.2- Funciones y metodos crear funciones reutilizables para organizar y simplificar el codigo.3- Programacion orientada a objetos entender clases, objetos, herencia, encapsulacion y polimorfismo para crear aplicaciones mas estructuradas.</p>
-        <span class="text-gray-500">2025</span>
-      </a>
-
-      <!-- Curso de Sinergia -->
-      <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
-        <img src="https://ceutec.hn/wp-content/uploads/2025/06/sinergia-dia-2-12.jpg" alt="Curso de Sinergia" class="w-24 h-24 rounded-full mb-4 object-cover">
-        <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Sinergia</h3>
-        <p class="text-gray-700">En este curso aprendi sobre varios temas ya que tuvimos varias capacitaciones de diferentes temas y en cada uno de los temas habian cosas muy importantes y interesanates. Se aboradon diverosos temas como logistica, tecnologia, mercadotecnia, economia, periodismo y salud. Se hablo de liderazgo, inteligencia arificial.</p>
-        <span class="text-gray-500">2025</span>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Contacto -->
-  <section id="contacto" class="portafolio__section bg-gradient-to-r from-purple-50 to-pink-50 py-16 px-4">
-    <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Contacto</h2>
-    <form class="max-w-lg mx-auto bg-white p-8 rounded-2xl shadow-lg space-y-4">
-      <label for="nombre" class="block font-semibold">Nombre:</label>
-      <input type="text" id="nombre" name="nombre" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="correo" class="block font-semibold">Correo:</label>
-      <input type="email" id="correo" name="correo" value="Lissybuezo1996@gmail.com" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required>
-      <label for="mensaje" class="block font-semibold">Mensaje:</label>
-      <textarea id="mensaje" name="mensaje" rows="5" class="w-full border border-gray-300 rounded p-3 focus:outline-none focus:ring-2 focus:ring-purple-400" required></textarea>
-      <button type="submit" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Enviar Mensaje</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white text-center py-6">
-    Developed by @LissyBarrera24 | Correo: Lissybuezo1996@gmail.com
-  </footer>
-
-  <script>
-    // Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-
-    // Animaciones de secciones
-    const sections = document.querySelectorAll('.portafolio__section');
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
-    }, { threshold: 0.2 });
-    sections.forEach(section => observer.observe(section));
-
-    // Animaciones de barras de habilidades
-    window.addEventListener('load', () => {
-      document.querySelectorAll('.skill-fill').forEach(bar => {
-        bar.style.width = bar.getAttribute('data-width');
-      });
-    });
-  </script>
-
-</body>
-</html>
-
-Portafolio definitivo
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -664,7 +7,8 @@ Portafolio definitivo
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
   <style>
-    /* BEM Mejorado */
+    /* ---------- CSS original ---------- */
+    /* BEM */
     .portafolio__header { background-color: #1E40AF; }
     .portafolio__nav-item:hover { color: #60A5FA; }
     .portafolio__section { padding-top: 5rem; padding-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: all 0.8s ease-in-out; }
@@ -678,12 +22,76 @@ Portafolio definitivo
     .portafolio__social-floating a { background-color: #1E40AF; color: white; padding: 0.6rem; border-radius: 0 8px 8px 0; transition: all 0.3s; }
     .portafolio__social-floating a:hover { background-color: #9333EA; transform: translateX(5px); }
     .portafolio__project-image { width: 100%; height: 200px; object-fit: contain; border-radius: 0.5rem; margin-bottom: 1rem; }
+
+    /* Entradas y micro-animaciones */
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(60px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes floating {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.96); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .animate-fadeInUp { animation: fadeInUp 1s ease forwards; }
+    .animate-floating { animation: floating 3s ease-in-out infinite; }
+    .animate-popIn { animation: popIn 0.45s cubic-bezier(.2,.9,.3,1) forwards; }
+
+    /* Botones: pequeño efecto de foco y "pulse" al aparecer */
+    .btn-animated { transition: transform 0.18s ease, box-shadow 0.18s ease; will-change: transform; }
+    .btn-animated:active { transform: scale(0.98); }
+    .btn-animated:focus { outline: none; box-shadow: 0 0 0 4px rgba(99,102,241,0.12); }
+
+    /* Imagenes de proyecto: efecto de zoom suave al hover y shadow */
+    .portafolio__project-image { transition: transform 0.45s ease, box-shadow 0.45s ease; }
+    .portafolio__project-card:hover .portafolio__project-image { transform: scale(1.04); box-shadow: 0 12px 24px rgba(0,0,0,0.12); }
+
+    /* Tarjetas: bordes y overlay sutil al pasar el ratón */
+    .portafolio__project-card { position: relative; overflow: hidden; }
+    .portafolio__project-card::after {
+      content: \"\";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(99,102,241,0.03), rgba(156,163,175,0.02));
+      pointer-events: none;
+      transition: opacity 0.35s;
+      opacity: 0;
+    }
+    .portafolio__project-card:hover::after { opacity: 1; }
+
+    /* Iconos sociales: escala al focus y hover accesible */
+    .portafolio__social-floating a { display:flex; align-items:center; justify-content:center; width:44px; height:44px; }
+    .portafolio__social-floating a:focus { box-shadow: 0 6px 20px rgba(99,102,241,0.12); transform: translateX(6px); }
+
+    /* Indicador pequeño de scroll en header (borde inferior animado) */
+    .portafolio__header { box-shadow: 0 2px 8px rgba(2,6,23,0.08); border-bottom: 3px solid transparent; transition: border-color 0.3s ease; }
+    .portafolio__header.scrolled { border-bottom-color: rgba(147,51,234,0.18); backdrop-filter: blur(4px); }
+
+    /* Barra de habilidades: pulso al completar */
+    .portafolio__skill-fill.completed { box-shadow: 0 6px 18px rgba(99,102,241,0.12); transition: width 1.6s cubic-bezier(.2,.9,.3,1), box-shadow 0.5s ease; }
+
+    /* Pequeño efecto parallax en el hero (solo movimiento de background) */
+    #inicio { background-attachment: fixed; background-size: cover; }
+
+    /* Pequeñas mejoras responsivas */
+    @media (max-width: 768px) {
+      .portafolio__social-floating { display: none; } /* ocultar redes flotantes en móvil para no tapar contenido */
+      .portafolio__project-image { height: 180px; }
+    }
+
+    /* Accesibilidad: foco visible para enlaces de navegación */
+    .portafolio__nav-item:focus { outline: none; box-shadow: 0 0 0 4px rgba(99,102,241,0.12); border-radius: 6px; padding: 2px 6px; }
   </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
   <!-- Redes flotantes -->
-  <div class="portafolio__social-floating">
+  <div class="portafolio__social-floating animate-floating" aria-hidden="false">
     <a href="https://github.com/LissyBarrera24" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
     <a href="https://t.me/LissyBarrera" target="_blank" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
     <a href="https://www.linkedin.com/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -691,7 +99,7 @@ Portafolio definitivo
   </div>
 
   <!-- Header -->
-  <header class="portafolio__header text-white fixed w-full z-50 shadow-md">
+  <header class="portafolio__header text-white fixed w-full z-50 shadow-md" role="banner">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-2xl font-bold">Lissy Darithza Barrera</h1>
       <nav aria-label="Menú principal">
@@ -708,15 +116,22 @@ Portafolio definitivo
     </div>
   </header>
 
+
   <!-- Inicio -->
   <section id="inicio" class="portafolio__section bg-gradient-to-r from-purple-400 via-pink-400 to-red-400 text-center text-white pt-32">
     <h2 class="text-5xl font-bold mb-4 gradient-text">¡Hola! Soy Lissy Darithza Barrera</h2>
     <p class="text-xl mb-6">Soy una estudiante de programación y profesional en consejería escolar</p>
     <div class="flex justify-center gap-4 mt-6">
-      <a href="#contacto" class="bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
-      <a href="#habilidades" class="bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
+      <a href="#contacto" class="btn-animated bg-white text-purple-700 px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Contactarme</a>
+      <a href="#habilidades" class="btn-animated bg-purple-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg hover:scale-105 transition-transform">Ver Habilidades</a>
     </div>
   </section>
+
+  <!-- Astronauta Animado -->
+<div class="flex justify-center mt-10 animate-floating">
+<img src="https://i.pinimg.com/736x/32/a9/38/32a938abdb1342ba308b21f1649c739e.jpg" class="w-60 h-60 object-contain mx-auto rounded-xl shadow-xl" alt="Astronauta programando">
+</div>
+
 
   <!-- Biografía -->
   <section id="biografia" class="portafolio__section container mx-auto px-4">
@@ -751,21 +166,21 @@ Portafolio definitivo
     <h2 class="text-4xl font-semibold mb-12 text-center gradient-text">Proyectos Destacados</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-      <!-- Proyecto 1 -->
+      <!-- Proyecto 1 Sistema De Venta De Boletos -->
       <div class="portafolio__project-card bg-white rounded-xl shadow-md p-6">
         <img src="https://clubolimpia.com/wp-content/uploads/2016/08/Web-DrELMER-Olimpia-639x359.jpg" alt="Sistema de venta de boletos" class="portafolio__project-image">
         <h3 class="text-xl font-bold text-purple-700 mb-2">Sistema de Venta de Boletos</h3>
         <p class="text-gray-700">En este proyecto trabajamos en vender boletos de los partidos de fútbol, ya sea VIP, palco o sombra, y la disponibilidad de asientos.</p>
       </div>
 
-      <!-- Proyecto 2-->
+      <!-- Proyecto 2 Dulces Tentaciones-->
       <div class="portafolio__project-card bg-white rounded-xl shadow-md p-6">
         <img src="https://bavette.es/wp-content/uploads/bunuelos-rellenos-receta.jpg" alt="Dulces Tentaciones" class="portafolio__project-image">
         <h3 class="text-xl font-bold text-purple-700 mb-2">Dulces Tentaciones - Panadería para Diabéticos</h3>
         <p class="text-gray-700">Creamos una página web donde los clientes podían ver los postres saludables que ofrecíamos y conocer los ingredientes utilizados para que fueran saludables. Hicimos un catálogo digital para mostrárselo a los clientes y también creamos cuentas en Facebook, Instagram y TikTok.</p>
       </div>
 
-      <!-- Proyecto 3 -->
+      <!-- Proyecto 3 Recetario De Comidas-->
       <div class="portafolio__project-card bg-white rounded-xl shadow-md p-6">
         <img src="https://cdn7.kiwilimon.com/articuloimagen/32308/564x846/32455.jpg.webp" alt="Recetario de Comidas" class="portafolio__project-image">
         <h3 class="text-xl font-bold text-purple-700 mb-2">Recetario de Comidas</h3>
@@ -789,25 +204,25 @@ Portafolio definitivo
       </div>
       <div>
         <p class="font-semibold mb-1">Java</p>
-        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="75%"></div></div>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="70%"></div></div>
       </div>
       <div>
         <p class="font-semibold mb-1">Git / GitHub</p>
-        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="85%"></div></div>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="80%"></div></div>
       </div>
       <div>
         <p class="font-semibold mb-1">Figma / UI Design</p>
-        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="70%"></div></div>
+        <div class="portafolio__skill-bar"><div class="portafolio__skill-fill" data-width="50%"></div></div>
       </div>
     </div>
   </section>
 
-  <!-- Cursos y Certificaciones -->
+  <!-- Cursos -->
   <section id="cursos" class="portafolio__section container mx-auto px-4">
     <h2 class="text-4xl font-semibold mb-8 text-center gradient-text">Cursos y Certificaciones</h2>
     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-      <!-- Curso de Computacion -->
+      <!-- Curso De Computacion -->
       <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
         <img src="https://image.shutterstock.com/image-photo/teacher-giving-computer-science-lecture-600nw-2326351789.jpg" alt="Curso de Computación" class="w-24 h-24 rounded-full mb-4 object-cover">
         <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Computación</h3>
@@ -815,7 +230,7 @@ Portafolio definitivo
         <span class="text-gray-500">2023</span>
       </div>
 
-      <!-- Curso de Finanzas -->
+      <!-- Curso De Finanzas -->
       <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
         <img src="https://www.educaciontrespuntocero.com/cursos/wp-content/uploads/2023/04/cursos-de-finanzas-destacada-min.jpg" alt="Curso Cómo Ordenar Mis Finanzas" class="w-24 h-24 rounded-full mb-4 object-cover">
         <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Cómo Ordenar Mis Finanzas</h3>
@@ -823,7 +238,7 @@ Portafolio definitivo
         <span class="text-gray-500">2018</span>
       </div>
 
-      <!-- Curso de Programación -->
+      <!-- Curso De Programación -->
       <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
         <img src="https://www.netuy.net/wp-content/uploads/2022/06/coursera-1024x517.webp" alt="Curso de Programación" class="w-24 h-24 rounded-full mb-4 object-cover">
         <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Programación</h3>
@@ -831,16 +246,13 @@ Portafolio definitivo
         <span class="text-gray-500">2025</span>
       </div>
 
-      <!-- Curso de Sinergia -->
+      <!-- Curso De Sinergia -->
       <div class="portafolio__card bg-white p-4 rounded-xl shadow-md hover:shadow-xl hover:scale-105 transition-transform flex flex-col items-center">
         <img src="https://ceutec.hn/wp-content/uploads/2025/06/sinergia-dia-2-12.jpg" alt="Curso de Sinergia" class="w-24 h-24 rounded-full mb-4 object-cover">
         <h3 class="font-bold text-lg mb-1 text-purple-700 text-center">Curso de Sinergia</h3>
         <p class="text-gray-700">En este curso aprendí sobre logística, tecnología, mercadotecnia, economía, periodismo, salud, liderazgo e inteligencia artificial. Fue muy enriquecedor y diverso.</p>
         <span class="text-gray-500">2025</span>
       </div>
-
-    </div>
-  </section>
 
     </div>
   </section>
@@ -859,11 +271,24 @@ Portafolio definitivo
     </form>
   </section>
 
+  <!-- Imágenes en las esquinas superiores -->
+<div class="imagenes-esquinas">
+  <!-- Imágenes -->
+<img src="https://www.shutterstock.com/image-vector/sticker-cute-astronaut-working-on-600nw-2639708749.jpg" 
+     class="absolute top-0 left-0 w-16 md:w-20 z-50 select-none pointer-events-none img-flotante"
+     alt="Decoración esquina izquierda">
+
+<img src="https://static.vecteezy.com/system/resources/previews/016/796/330/non_2x/cute-astronaut-working-on-laptop-cartoon-icon-illustration-science-technology-icon-concept-isolated-premium-flat-cartoon-style-vector.jpg" 
+     class="absolute top-0 right-0 w-16 md:w-20 z-50 select-none pointer-events-none img-flotante"
+     alt="Decoración esquina derecha">
+</div>
+
   <!-- Footer -->
   <footer class="bg-gray-900 text-white text-center py-6">
     Developed by @LissyBarrera24 | Correo: Lissybuezo1996@gmail.com
   </footer>
 
+  <!-- ---------- Scripts ---------- -->
   <script>
     // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -888,6 +313,95 @@ Portafolio definitivo
     });
   </script>
 
+  <!-- ---------- Scripts ---------- -->
+  <script>
+    // 1) Añadir clases de animación a las secciones cuando aparecen (stagger)
+    (function() {
+      const sectionsAll = document.querySelectorAll('.portafolio__section');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            // staggered animation: delay según posición
+            const children = Array.from(entry.target.querySelectorAll('*'));
+            entry.target.classList.add('portafolio__section--visible', 'animate-popIn');
+            // small stagger for direct children (improves sensación de profundidad)
+            children.slice(0,6).forEach((el, i) => {
+              el.style.animation = `fadeInUp 0.9s cubic-bezier(.2,.9,.3,1) ${i * 0.08}s both`;
+            });
+          }
+        });
+      }, { threshold: 0.18 });
+      sectionsAll.forEach(s => io.observe(s));
+    })();
+
+    // 2) Mejorar visual del header al hacer scroll (clase .scrolled)
+    (function(){
+      const header = document.querySelector('.portafolio__header');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 20) header.classList.add('scrolled'); else header.classList.remove('scrolled');
+      });
+    })();
+
+    // 3) Animación para barras de habilidad con 'completed' class al final
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.portafolio__skill-fill').forEach((bar, index) => {
+        const target = bar.getAttribute('data-width') || '0%';
+        // retraso para que parezca más dinámico
+        setTimeout(() => {
+          bar.style.width = target;
+          // añadir clase completed cuando termine la transición (aprox)
+          setTimeout(() => bar.classList.add('completed'), 650);
+        }, 250 + index * 120);
+      });
+    });
+
+    // 4) Efecto "tilt" suave en tarjetas de proyecto (mouse) - liviano, no librería
+    (function(){
+      const cards = document.querySelectorAll('.portafolio__project-card');
+      cards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left; // x position within the element.
+          const y = e.clientY - rect.top;  // y position within the element.
+          const cx = rect.width/2;
+          const cy = rect.height/2;
+          const dx = (x - cx) / cx;
+          const dy = (y - cy) / cy;
+          const tiltX = (dy * 6).toFixed(2);
+          const tiltY = (dx * -6).toFixed(2);
+          card.style.transform = `translateY(-6px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale(1.01)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    })();
+
+    // 5) Añadir focus visible para todos los elementos interactivos (mejora accesibilidad)
+    (function(){
+      const interactive = document.querySelectorAll('a, button, input, textarea');
+      interactive.forEach(el => {
+        el.addEventListener('keydown', (e) => {
+          if (e.key === 'Tab') el.classList.add('keyboard-focus');
+        });
+        el.addEventListener('blur', () => el.classList.remove('keyboard-focus'));
+      });
+    })();
+
+    // 6) Pequeña animación inicial para enlaces del header (fade-in stagger)
+    (function(){
+      const navItems = document.querySelectorAll('.portafolio__nav-item');
+      navItems.forEach((it, idx) => {
+        it.style.opacity = 0;
+        it.style.transform = 'translateY(-6px)';
+        setTimeout(() => {
+          it.style.transition = 'all 0.45s cubic-bezier(.2,.9,.3,1)';
+          it.style.opacity = 1;
+          it.style.transform = '';
+        }, 450 + idx * 70);
+      });
+    })();
+  </script>
+
 </body>
 </html>
-
